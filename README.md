@@ -40,3 +40,7 @@ npx prisma db seed
 ```
 npm run start
 ```
+
+open some browser
+
+http://localhost:4000/graphql
