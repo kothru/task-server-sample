@@ -2,23 +2,25 @@
 
 Simple Task Server Sample
 
-Composed by Apollo Server(fastify) + GraphQL(Nexus?) + Prisma
-
 ## Description
 
-use postgreSQL DB
+Composed by Apollo Server(fastify) + GraphQL(Nexus?) + Prisma
+
+## Prerequisites
+
+This program use postgreSQL. Please get ready to some postgreSQL env.
 
 ## Getting Started
 
 ### Installing
 
-* install pkg
+* Install pkg
 
 ```cmd
 npm i
 ```
 
-* make `.env` file, and write connection string on your env
+* Make `.env` file, and write connection string on your env
 
 ```
 touch .env
@@ -26,7 +28,7 @@ touch .env
 
 (see) https://pris.ly/d/connection-strings
 
-* run prisma migrate, seeds
+* Run prisma migrate, seeds (below command create db if not exists)
 
 ```
 npx prisma migrate dev
