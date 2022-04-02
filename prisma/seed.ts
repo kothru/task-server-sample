@@ -3,19 +3,19 @@ import { faker } from '@faker-js/faker';
 const prisma = new PrismaClient()
 
 async function main() {
-  Promise.all(
-    [...Array(5)].map(async () => {
-      const task = prisma.task.create({
-        data: {
-          name: faker.name.findName(),
-          plan: faker.datatype.number(),
-          actual: 0,
-        },
-      })
-      console.log({ task })
-      return task
-    })
-  )
+  const tasks = [...Array(5)].map(() => {
+    return {
+      name: faker.name.findName(),
+      plan: faker.datatype.number(),
+      actual: 0,
+    }
+  })
+
+  console.log(tasks)
+  const task = prisma.task.createMany({
+    data: tasks,
+  })
+  return task
 }
 
 main()
