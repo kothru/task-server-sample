@@ -35,6 +35,12 @@ npx prisma migrate dev
 npx prisma db seed
 ```
 
+* Run codegen
+
+```
+npx prisma generate
+```
+
 ### Executing program
 
 ```
