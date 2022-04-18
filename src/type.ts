@@ -15,7 +15,7 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  updateActual?: Maybe<Array<Maybe<Task>>>;
+  updateActual: Array<Task>;
 };
 
 
@@ -30,10 +30,10 @@ export type Query = {
 
 export type Task = {
   __typename?: 'Task';
-  actual?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
-  plan?: Maybe<Scalars['Int']>;
+  actual: Scalars['Int'];
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  plan: Scalars['Int'];
 };
 
 export type TaskInputType = {

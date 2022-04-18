@@ -4,10 +4,10 @@ import path from 'path'
 const Task = objectType({
   name: 'Task',
   definition(t) {
-    t.int('id')
-    t.string('name')
-    t.int('plan')
-    t.int('actual')
+    t.nonNull.int('id')
+    t.nonNull.string('name')
+    t.nonNull.int('plan')
+    t.nonNull.int('actual')
   },
 })
 
@@ -30,9 +30,9 @@ const TaskInputType = inputObjectType({
 const Mutation = mutationType({
   definition(t) {
     t.field('updateActual', {
-      type: list(Task),
+      type: nonNull(list(nonNull(Task))),
       args: {
-        tasks: nonNull(list(nonNull('TaskInputType')))
+        tasks: nonNull(list(nonNull(TaskInputType)))
       }
     })
   },

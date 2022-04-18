@@ -3,7 +3,7 @@
 
 
 type Mutation {
-  updateActual(tasks: [TaskInputType!]!): [Task]
+  updateActual(tasks: [TaskInputType!]!): [Task!]!
 }
 
 type Query {
@@ -11,10 +11,10 @@ type Query {
 }
 
 type Task {
-  actual: Int
-  id: Int
-  name: String
-  plan: Int
+  actual: Int!
+  id: Int!
+  name: String!
+  plan: Int!
 }
 
 input TaskInputType {
