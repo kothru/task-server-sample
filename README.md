@@ -4,7 +4,7 @@ Simple Task Server Sample
 
 ## Description
 
-Composed by Apollo Server(fastify) + GraphQL(Nexus?) + Prisma
+Composed by Apollo Server(fastify) + GraphQL(Nexus) + Prisma
 
 ## Prerequisites
 
