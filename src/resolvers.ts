@@ -1,15 +1,7 @@
 import { PrismaClient } from '@prisma/client';
+import { MutationUpdateActualArgs } from './type';
 
 const prisma = new PrismaClient()
-
-type TaskInputType = {
-  id: number
-  actual: number
-}
-
-type UpdateActualArgsType = {
-  tasks: TaskInputType[]
-}
 
 export const resolvers = {
   Query: {
@@ -19,7 +11,7 @@ export const resolvers = {
   },
   Mutation: {
     // https://www.apollographql.com/docs/apollo-server/data/resolvers/#resolver-arguments
-    updateActual: async (_parent: any, args: UpdateActualArgsType) => {
+    updateActual: async (_parent: any, args: MutationUpdateActualArgs) => {
       const updateTasks = Promise.all(
         args.tasks.map(async (taskArgs) => {
           const task = await prisma.task.update({

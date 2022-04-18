@@ -1,4 +1,4 @@
-import { makeSchema, objectType, queryType, list, inputObjectType, mutationType } from 'nexus'
+import { makeSchema, objectType, queryType, list, nonNull, inputObjectType, mutationType } from 'nexus'
 import path from 'path'
 
 const Task = objectType({
@@ -32,7 +32,7 @@ const Mutation = mutationType({
     t.field('updateActual', {
       type: list(Task),
       args: {
-        tasks: list('TaskInputType')
+        tasks: nonNull(list(nonNull('TaskInputType')))
       }
     })
   },

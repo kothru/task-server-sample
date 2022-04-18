@@ -3,7 +3,7 @@
 
 
 type Mutation {
-  updateActual(tasks: [TaskInputType]): [Task]
+  updateActual(tasks: [TaskInputType!]!): [Task]
 }
 
 type Query {
